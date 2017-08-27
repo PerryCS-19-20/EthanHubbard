@@ -3,27 +3,6 @@
     <head>
         <title>Ethan's Web Page</title>
     </head>
-    <body style="background-image: url('bgblur.jpg');background-position: center;
-    background-size: cover;">
-<script>
-var count_particles, stats, update;
-stats = new Stats;
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
-</script>
         <h1> Ethan Hubbard, Software Engineering</h1>
         
         <img src="http://static4.businessinsider.com/image/56c640526e97c625048b822a-480/donald-trump.jpg">
