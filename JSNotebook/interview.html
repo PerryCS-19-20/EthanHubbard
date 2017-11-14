@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>User Input and Variables</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>What I learned today...</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+    function start() {
+        var firstName = readLine("What is your first name?");
+        var lastName = readLine("What is your last name?");
+        var middleInitial = readLine("What is your middle initial?");
+        var age = readLine("What is your age?");
+        var yearInSchool = readLine("What is your year in school?");
+        var walkToSchool = readLine("Do you walk to school?");
+        var hoursOfHomework = readLine("How many hours of homework do you have?");
+        
+        println(firstName);
+    }
+
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    
+  </body>
+</html>
