@@ -31,10 +31,23 @@
         var middleInitial = readLine("What is your middle initial?");
         var age = readLine("What is your age?");
         var yearInSchool = readLine("What is your year in school?");
-        var walkToSchool = readLine("Do you walk to school?");
+        var walkToSchool = readBoolean("Do you walk to school?");
         var hoursOfHomework = readLine("How many hours of homework do you have?");
-        
-        println(firstName);
+        var plans = readBoolean("Do you have plans for this weekend?");
+        var weekendPlans = readLine("What are you plans for this weekend?");
+        var career = readLine("What do you plan to be?");
+        var college = readLine("What college do you plan on going to?");
+        var favTeam = readLine("What is your favorite team?");
+        println("Subject: " + lastName + ", " + firstName + " " + middleInitial);
+        println("Born in: " + age);
+        println(yearInSchool + ", " + walkToSchool);
+        println("Plans: ");
+        println(hoursOfHomework);
+        println("Weekend: " + weekendPlans);
+        println("Other Information: ");
+        println("Plans to be: " + career);
+        println("College: " + college);
+        println("Favorate team: " + favTeam);
     }
 
 </script>
