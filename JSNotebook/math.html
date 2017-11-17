@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Variables and Math</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>What I learned today...</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+
+    var a = readInt("What is the length of the first side?");
+    var b = readInt("What is the length of the second side?");
+    var x = 0;
+    var y = 0;
+    x = ((a**2)+(b**2));
+    y = math.sqrt(x);
+    println("First side? "+a);
+    println("Second side? "+b);
+    println("Hypotenuse "+y);
+    
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    
+  </body>
+</html>
