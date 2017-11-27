@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Graphics Objects</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>You can get the width using canvas.getWidth(). Drawing circles is easy, create a variable and add new Circle(x,y,r). The grid is weird.</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+        function start() {
+        canvas.prepare();
+        
+        // Calculate the center x pos of the snowman
+        var x = canvas.getWidth() / 2;
+        
+        // Calculate the radius and center Y position of the 3 balls
+        var botH = canvas.getHeight() / 6;
+        var botY = canvas.getHeight() - botH;
+        
+        var midH = botH * 2 / 3;
+        var midY = canvas.getHeight() - (2 * botH) - midH;
+        
+        var topH = midH * 2 / 3;
+        var topY = canvas.getHeight() - (2 * botH) - (2 * midH) - topH;
+        
+        // Create the background
+        var back = new Rect(0, 0, canvas.getWidth(), canvas.getHeight());
+        back.setColor("blue");
+        
+        // Create the bottom ball
+        var bot = new Circle(x, botY, botH);
+        bot.setColor("white");
+        
+        // Create the middle ball
+        var mid = new Circle(x, midY, midH);
+        mid.setColor("white");
+        
+        // Create the top ball
+        var top = new Circle(x, topY, topH);
+        top.setColor("white");
+        
+        canvas.add(back);
+        canvas.add(bot);
+        canvas.add(mid);
+        canvas.add(top);
+        
+        canvas.draw();
+    }
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>    
+  </body>
+</html>
