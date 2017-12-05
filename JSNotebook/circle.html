@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Graphics Objects</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>Circles suck.</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        tilingCircles <!-- Program title -->
+      </div>
+
+<script class="code">
+    function start(){
+        canvas.prepare();
+        var number = readInt("How many circles per row?");
+        var r = canvas.getWidth() / 10 / 2;
+        var placeholder = 0;
+        for(i = 1; i <= number; i++){
+          var circle = new Circle((canvas.getWidth() / number) - r + placeholder, canvas.getHeight()/number, r)
+          var randomNumber1 = Math.random() * 256;
+        var randomNumber2 = Math.random() * 256;
+        var randomNumber3 = Math.random() * 256;
+          placeholder = placeholder + canvas.getWidth()/number;
+          circle.setColor(rgb(randomNumber1, randomNumber2, randomNumber3));
+          canvas.add(circle);
+        }
+        
+        canvas.draw();
+    }
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>    
+  </body>
+</html>
