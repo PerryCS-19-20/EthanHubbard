@@ -24,27 +24,32 @@
       </div>
 
 <script class="code">
-    function start(){
-        canvas.prepare();
-        var number = readInt("How many circles per row?");
-        var r = canvas.getWidth() / 10 / 2;
-        var placeholder = 0;
-        var rows = canvas.getHeight() / (r * 2);
-        var rowNumber = 0;
-        for(var i = 0; i < rows; i++){
-            for(var j = 1; j <= number; j++){
-                var circle = new Circle((canvas.getWidth() / number) - r + placeholder, rowNumber+r, r);
-                var randomNumber1 = Math.random() * 256;
-                var randomNumber2 = Math.random() * 256;
-                var randomNumber3 = Math.random() * 256;
-                placeholder = placeholder + canvas.getWidth()/number;
-                circle.setColor(rgb(randomNumber1, randomNumber2, randomNumber3));
-                canvas.add(circle);
-            }
-            rowNumber = rowNumber + (r*2); 
+function start() {
+    canvas.prepare();
+    
+    var num = readInt("How many circles in the row?");
+    
+    var diameter = canvas.getWidth() / num;
+    var radius = diameter / 2;
+    var rows = canvas.getHeight() / diameter;
+    var rowChange = 0;
+    
+    for (var j = 0; j < rows; j++) {
+        for (var i = 0; i < num; i++) {
+            var x = (i * diameter) + radius;
+            var circle = new Circle(x, radius + rowChange, radius);
+        
+            var red = Math.floor(Math.random() * 256);
+            var green = Math.floor(Math.random() * 256);
+            var blue = Math.floor(Math.random() * 256);
+            circle.setColor(rgb(red, green, blue));
+        
+            canvas.add(circle);
         }
-        canvas.draw();
+        rowChange = rowChange + diameter;
     }
+    canvas.draw();
+}
 </script>
       <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
       <textarea id="Console"></textarea> <!-- Text output console -->
