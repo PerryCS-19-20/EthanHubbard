@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>      
+    <link href="https://perryma.tk/jsnotebook/notebook.css" rel="stylesheet" type="text/css" />    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://perryma.tk/jsnotebook/notebook.js"></script>
+    <title>My JavaScript Notebook</title>
+  </head>
+
+  <body>
+    <div class="header">
+        <!-- Title for this notebook page -->
+        <h1>My JavaScript Notebook: <em>Variables and Math</em></h1>
+        <div class="menubar"></div>
+    </div>
+    
+    <!-- Describe what this notebook page is showing -->
+    <p><em>Conversions can be used to help simplify lots of things in code and in real life.</em></p>
+    
+    <!-- Below is the code that will run -->
+    <div>
+      <div class="title"> <!-- title bar for the javascript code -->
+        <button onclick="start();">Run</button> <!-- Run button that calls start function when pressed -->
+        Hello World <!-- Program title -->
+      </div>
+
+<script class="code">
+    function start(){
+       var mileAmount = readInt("Distance in miles?"); 
+       var kilometerAmount = milesToKilometers(mileAmount);
+       var meterAmount = kilometersToMeters(kilometerAmount);
+       var feetAmount = metersToFeet(meterAmount);
+       var inchAmount = feetToInches(feetAmount);
+       var mmAmount = inchesToMillimeters(inchAmount);
+       
+       println("Distance in kilometers: " + kilometerAmount);
+       println("Distance in meters: " + meterAmount);
+       println("Distance in feet: " + feetAmount);
+       println("Distance in inches: " + inchAmount);
+       println("Distance in millimeters: " + mmAmount);
+       
+   }
+    function milesToKilometers(miles) {
+        return miles*1.60934;
+    }
+    function kilometersToMeters(kilometers) {
+        return kilometers*1000;
+    }
+    function metersToFeet(meters) {
+        return meters*3.28084;
+    }
+    function feetToInches(feet) {
+        return feet*12;
+    }
+    function inchesToMillimeters(inches) {
+        return inches*25.4;
+    }
+</script>
+      <canvas id="Drawing"></canvas> <!-- Graphics output canvas -->
+      <textarea id="Console"></textarea> <!-- Text output console -->
+    </div>
+    
+  </body>
+</html>
